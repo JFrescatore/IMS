@@ -1,0 +1,69 @@
+﻿<Window x:Class="IMS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IMS"
+        mc:Ignorable="d"
+        ResizeMode="CanMinimize"
+        SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterScreen"
+        Title="Frescatore Firearms - Application" Height="750" Width="1200">
+    <Grid Background="#030B0F">
+        <Image Source="icons/ProgramBackground.png" Height="750" Width="1200" Stretch="Fill"
+               Opacity="0.75"/>
+
+        <Grid Name="FirearmDisplay" Background="#041319" Width="1000" Height="380">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Name="HeaderField">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition Width="125"/>
+                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition Width="125"/>
+                </Grid.ColumnDefinitions>
+                
+                <Button Style="{StaticResource MenuButton}" Grid.Column="1" Content="Serial Number" BorderThickness="0"/>
+                <Border Grid.Column="1" BorderBrush="White" BorderThickness="1,0,1,0" Height="30"/>
+
+                <Button Style="{StaticResource MenuButton}" Grid.Column="2" Content="Firearm Caliber" BorderThickness="0"/>
+                <Border Grid.Column="2" BorderBrush="White" BorderThickness="0,0,1,0" Height="30"/>
+
+                <Button Style="{StaticResource MenuButton}" Grid.Column="3" Content="Firearm Type" BorderThickness="0"/>
+                <Border Grid.Column="3" BorderBrush="White" BorderThickness="0,0,1,0" Height="30"/>
+
+                <Button Style="{StaticResource MenuButton}" Grid.Column="4" Content="Firearm Model" BorderThickness="0"/>
+                <Border Grid.Column="4" BorderBrush="White" BorderThickness="0,0,1,0" Height="30"/>
+
+                <Button Style="{StaticResource MenuButton}" Grid.Column="5" Content="Firearm Manufacturer" BorderThickness="0"/>
+                <Border Grid.Column="5" BorderBrush="White" BorderThickness="0,0,1,0" Height="30"/>
+
+                <Border Grid.ColumnSpan="7" BorderBrush="White" BorderThickness="0,0,0,1" Width="990"/>
+            </Grid>
+            <Grid Grid.Row="11" Name="FooterField">
+                <Border Grid.ColumnSpan="7" BorderBrush="White" BorderThickness="0,1,0,0" Width="990"/>
+                <Button x:Name="FirearmPrevious" Style="{StaticResource EntryButton}" Width="20" Height="20"
+                        Margin="0,0,150,0" Content="&lt;" FontSize="15" Click="Previous"/>
+                <Button Name="FirearmNext" Style="{StaticResource EntryButton}" Width="20" Height="20"
+                        Margin="150,0,0,0" Content="&gt;" FontSize="15" Click="Next"/>
+                <TextBlock Name="FirearmPageReadout" Style="{StaticResource EntryText}" Text="1/1" FontSize="20" Height="30" Width="100"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
